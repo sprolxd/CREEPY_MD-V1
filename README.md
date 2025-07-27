@@ -13,9 +13,9 @@
   <img src="https://files.catbox.moe/a7ckn2.jpeg" alt="CREEPY_MD-V1 Banner" width="600" style="border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);" />
 </p>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anu/Tarikul-Islam-Anu/main/assets/lines/colored.png" alt="Separator Line" width="80%" />
-</p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="Rainbow divider" width="100%" height="5px">
+</div>
 
 <p align="center">
   <a href="https://github.com/DannyTech20/CREEPY_MD-V1?tab=followers">
@@ -38,9 +38,9 @@
   </a>
 </p>
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anu/Tarikul-Islam-Anu/main/assets/lines/colored.png" alt="Separator Line" width="80%" />
-</p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="Rainbow divider" width="100%" height="5px">
+</div>
 
 ## 🚀 About CREEPY_MD-V1
 
@@ -52,9 +52,9 @@
 - 📦 **Lightweight Codebase**: Optimized for performance on various platforms.
 - 🔒 **Secure Setup for V2**: The upgraded V2 downloads all files as a single, secure ZIP archive.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anu/Tarikul-Islam-Anu/main/assets/lines/colored.png" alt="Separator Line" width="80%" />
-</p>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="Rainbow divider" width="100%" height="5px">
+</div>
 
 <h2 align="center">🛠️ Get Started</h2>
 
