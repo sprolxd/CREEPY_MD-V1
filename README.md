@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img src="https://files.catbox.moe/a7ckn2.jpeg" alt="Main Graphic" />
+  <img src="https://files.catbox.moe/f6j3fl.jpeg" alt="Main Graphic" />
 </p>
 
 <p align="center">
@@ -68,7 +68,7 @@
 
 ### Get Your Session ID
 <p align="center">
-  <a href="https://session.creepytech.org" target="_blank">
+  <a href="https://creepy-session.onrender.com" target="_blank">
     <img src="https://img.shields.io/badge/Get%20Session-ID-blue?style=for-the-badge&logo=key" alt="Get Session ID" />
   </a>
 </p>
