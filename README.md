@@ -74,7 +74,7 @@
 
   <div>
     <h3 style="font-size: 1.2em; margin: 10px 0;">Get Your Session ID</h3>
-    <a href="https://creepy-session.onrender.com" target="_blank">
+    <a href="https://session.creepytech.org" target="_blank">
       <img src="https://img.shields.io/badge/Get%20Session-ID-blue?style=flat-square&logo=key" alt="Get Session ID" style="max-width: 100%;" />
     </a>
   </div>
