@@ -58,24 +58,24 @@
 
 <h2 align="center">🛠️ Get Started</h2>
 
-  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-    <a href="https://github.com/DannyTech20/CREEPY_MD-V1/fork" style="text-decoration: none; color: #333;">
-      <div style="width: 120px; text-align: center;">
-        <span style="font-size: 2em;">🍴</span>
-        <h3 style="font-size: 1em; margin: 10px 0;">Fork the Repo</h3>
-      </div>
+<div style="margin-bottom: 20px;">
+    <h3 style="font-size: 1.2em; margin: 10px 0;">Fork the Repo</h3>
+    <a href="https://github.com/DannyTech20/CREEPY_MD-V1/fork">
+      <img src="https://img.shields.io/badge/Fork%20Repo-black?style=flat-square&logo=github" alt="Fork Button" style="max-width: 100%;" />
     </a>
-    <a href="https://github.com/DannyTech20/CREEPY_MD-V1/archive/refs/heads/main.zip" style="text-decoration: none; color: #333;">
-      <div style="width: 120px; text-align: center;">
-        <span style="font-size: 2em;">📥</span>
-        <h3 style="font-size: 1em; margin: 10px 0;">Download ZIP</h3>
-      </div>
+  </div>
+
+  <div style="margin-bottom: 20px;">
+    <h3 style="font-size: 1.2em; margin: 10px 0;">Download the ZIP File</h3>
+    <a href="https://github.com/DannyTech20/CREEPY_MD-V1/archive/refs/heads/main.zip">
+      <img src="https://img.shields.io/badge/Download%20ZIP-blue?style=flat-square&logo=files" alt="Download ZIP" style="max-width: 100%;" />
     </a>
-    <a href="https://session.creepytech.org" style="text-decoration: none; color: #333;">
-      <div style="width: 120px; text-align: center;">
-        <span style="font-size: 2em;">🔑</span>
-        <h3 style="font-size: 1em; margin: 10px 0;">Get Session ID</h3>
-      </div>
+  </div>
+
+  <div>
+    <h3 style="font-size: 1.2em; margin: 10px 0;">Get Your Session ID</h3>
+    <a href="https://creepy-session.onrender.com" target="_blank">
+      <img src="https://img.shields.io/badge/Get%20Session-ID-blue?style=flat-square&logo=key" alt="Get Session ID" style="max-width: 100%;" />
     </a>
   </div>
 </div>
