@@ -58,28 +58,27 @@
 
 <h2 align="center">🛠️ Get Started</h2>
 
-<table align="center">
-  <tr>
-    <td align="center" width="33%">
-      <a href="https://github.com/DannyTech20/CREEPY_MD-V1/fork">
-        <img src="https://octodex.github.com/images/forkme.png" width="100">
-        <h3>1️⃣ Fork the Repo</h3>
-      </a>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://github.com/DannyTech20/CREEPY_MD-V1/archive/refs/heads/main.zip">
-        <img src="https://cdn-icons-png.flaticon.com/512/716/716225.png" width="100">
-        <h3>2️⃣ Download ZIP</h3>
-      </a>
-    </td>
-    <td align="center" width="33%">
-      <a href="https://session.creepytech.org">
-        <img src="https://cdn-icons-png.flaticon.com/512/2889/2889676.png" width="100">
-        <h3>3️⃣ Get Session ID</h3>
-      </a>
-    </td>
-  </tr>
-</table>
+  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+    <a href="https://github.com/DannyTech20/CREEPY_MD-V1/fork" style="text-decoration: none; color: #333;">
+      <div style="width: 120px; text-align: center;">
+        <span style="font-size: 2em;">🍴</span>
+        <h3 style="font-size: 1em; margin: 10px 0;">Fork the Repo</h3>
+      </div>
+    </a>
+    <a href="https://github.com/DannyTech20/CREEPY_MD-V1/archive/refs/heads/main.zip" style="text-decoration: none; color: #333;">
+      <div style="width: 120px; text-align: center;">
+        <span style="font-size: 2em;">📥</span>
+        <h3 style="font-size: 1em; margin: 10px 0;">Download ZIP</h3>
+      </div>
+    </a>
+    <a href="https://session.creepytech.org" style="text-decoration: none; color: #333;">
+      <div style="width: 120px; text-align: center;">
+        <span style="font-size: 2em;">🔑</span>
+        <h3 style="font-size: 1em; margin: 10px 0;">Get Session ID</h3>
+      </div>
+    </a>
+  </div>
+</div>
 
 <div align="center">
   <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png" alt="Rainbow divider" width="100%" height="5px">
