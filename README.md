@@ -44,7 +44,7 @@
 
 ## 🚀 About CREEPY_MD-V1
 
-**CREEPY_MD-V1** is a powerful WhatsApp bot designed for automation, group management, and fun interactions. Built with JavaScript, it offers a lightweight and customizable platform for WhatsApp automation. **Note**: This is the V1 README. For the latest features and a simplified setup, check out [CREEPY_MD-V2](https://github.com/DannyTech20/CREEPY_MD-V2).
+**CREEPY_MD-V1** is a powerful WhatsApp bot designed for automation, group management, and fun interactions. Built with JavaScript, it offers a lightweight and customizable platform for WhatsApp automation. **Note**: This is the V1. For the latest features and a simplified setup, check out [CREEPY_MD-V2](https://github.com/DannyTech20/CREEPY_MD-V2).
 
 ### Key Features
 - 🌟 **Command-Based Interactions**: Supports commands like `!menu`, `!sticker`, and more.
