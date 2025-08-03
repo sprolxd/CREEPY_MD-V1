@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREEPY_MD-V1 Status</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Orbitron', Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #2c5364 80%);
+            color: #00ffe7;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: bgmove 10s linear infinite alternate;
+        }
+        @keyframes bgmove {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .container {
+            background: rgba(20, 30, 40, 0.92);
+            border-radius: 22px;
+            box-shadow: 0 0 40px #00ffe7a0, 0 0 10px #222 inset;
+            padding: 48px 32px 32px 32px;
+            text-align: center;
+            max-width: 370px;
+            width: 95%;
+            position: relative;
+            overflow: hidden;
+        }
+        .bot-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 24px #00ffe7a0, 0 0 8px #222 inset;
+            margin-bottom: 18px;
+            animation: imgfloat 2.5s ease-in-out infinite alternate;
+        }
+        @keyframes imgfloat {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-12px); }
+        }
+        .status-icon {
+            font-size: 20px;
+            color: #00ffe7;
+            animation: pulse 1.2s infinite;
+            margin-bottom: 8px;
+        }
+        @keyframes pulse {
+            0% { text-shadow: 0 0 10px #00ffe7, 0 0 30px #00ffe7a0; }
+            50% { text-shadow: 0 0 30px #00ffe7, 0 0 60px #00ffe7a0; }
+            100% { text-shadow: 0 0 10px #00ffe7, 0 0 30px #00ffe7a0; }
+        }
+        .title {
+            font-size: 2.1rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            font-weight: 700;
+            color: #00ffe7;
+            text-shadow: 0 0 8px #00ffe7a0;
+            animation: titlefade 2s infinite alternate;
+        }
+        @keyframes titlefade {
+            0% { opacity: 1; }
+            100% { opacity: 0.85; }
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 22px;
+            color: #b3fff6;
+            letter-spacing: 1px;
+        }
+        .connected {
+            display: inline-block;
+            background: linear-gradient(90deg, #00ffe7 60%, #00ff88 100%);
+            color: #222;
+            font-weight: bold;
+            padding: 8px 22px;
+            border-radius: 999px;
+            box-shadow: 0 0 12px #00ffe7a0;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            animation: connectedpulse 1.5s infinite alternate;
+        }
+        @keyframes connectedpulse {
+            0% { box-shadow: 0 0 12px #00ffe7a0; }
+            100% { box-shadow: 0 0 24px #00ff88a0; }
+        }
+        .desc {
+            font-size: 0.98rem;
+            color: #b3fff6;
+            margin-bottom: 18px;
+            animation: fadein 2s;
+        }
+        @keyframes fadein {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .socials {
+            margin: 18px 0 10px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,255,231,0.08);
+            border-radius: 999px;
+            padding: 7px 18px;
+            color: #00ffe7;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background 0.2s, color 0.2s;
+        }
+        .social-link:hover {
+            background: linear-gradient(90deg, #00ffe7 60%, #00ff88 100%);
+            color: #222;
+        }
+        .created {
+            margin-top: 18px;
+            font-size: 0.95rem;
+            color: #b3fff6;
+            letter-spacing: 1px;
+        }
+        .created a {
+            color: #00ffe7;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        @media (max-width: 500px) {
+            .container {
+                padding: 25px 8px 18px 8px;
+            }
+            .title {
+                font-size: 1.3rem;
+            }
+            .status-icon {
+                font-size: 40px;
+            }
+            .bot-img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://files.catbox.moe/j7pimt.jpeg" alt="Bot Image" class="bot-img" />
+        <div class="status-icon">🟢</div>
+        <div class="title">CREEPY_MD-V1</div>
+        <div class="subtitle">Bot Status: <span class="connected">Connected &amp; Running</span></div>
+        <div class="desc">CREEPY_MD-V1 is connected successfully and running.</div>
+        <div class="socials">
+            <a class="social-link" href="https://youtube.com/@creepy_tech" target="_blank" rel="noopener">
+                <img src="https://img.icons8.com/color/24/youtube-play.png" alt="YouTube" style="vertical-align:middle;"> YouTube
+            </a>
+            <a class="social-link" href="https://github.com/DannyTech20" target="_blank" rel="noopener">
+                <img src="https://img.icons8.com/ios-filled/24/00ffe7/github.png" alt="GitHub" style="vertical-align:middle;"> GitHub
+            </a>
+            <a class="social-link" href="https://wa.me/dannytech" target="_blank" rel="noopener">
+                <img src="https://img.icons8.com/color/24/whatsapp.png" alt="WhatsApp" style="vertical-align:middle;"> WhatsApp
+            </a>
+        </div>
+        <div class="created">
+            Created by &mdash; 
+            <a href="https://danny.creepytech.org" target="_blank" rel="noopener">Danny Tech</a>
+        </div>
+    </div>
+</body>
+</html>
