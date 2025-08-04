@@ -121,32 +121,63 @@ async function startDannyTech20() {
         }
     })
 
-    // Auto-react to status
-    DannyTech20.ev.on('messages.upsert', async chatUpdate => {
-        if (!global.likestatus) return
-        const mek = chatUpdate.messages[0]
-        if (!mek.message || mek.key.fromMe) return
-        const from = mek.key.remoteJid
-        const isStatusUpdate = from === 'status@broadcast'
-        if (!isStatusUpdate) return
+ // ✅ Load emojis from external file
+const { emojis } = require('./autoreact.js');
+const dannyRandom = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
-        try {
-            await DannyTech20.readMessages([mek.key])
-            const { emojis } = require('./autoreact.js');
-            const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)]
-            await DannyTech20.sendMessage(from, {
-                react: {
-                    text: randomEmoji,
-                    key: mek.key,
-                }
-            }, {
-                statusJidList: [mek.key.participant || mek.participant]
-            })
-            console.log(`Auto-reacted to status update with: ${randomEmoji}`)
-        } catch (error) {
-            console.error("Error auto-reacting to status:", error)
+// ✅ Default: Always auto-react to status updates
+DannyTechInc.ev.on('messages.upsert', async chatUpdate => {
+    try {
+        const mek = chatUpdate.messages?.[0];
+        if (!mek?.message || mek.key.fromMe) return;
+
+        const from = mek.key.remoteJid;
+        const isStatusUpdate = from === 'status@broadcast';
+        if (!isStatusUpdate) return;
+
+        await DannyTechInc.readMessages([mek.key]);
+
+        const randomEmoji = dannyRandom(emojis);
+        await DannyTechInc.sendMessage(from, {
+            react: {
+                text: randomEmoji,
+                key: mek.key,
+            }
+        }, {
+            statusJidList: [mek.key.participant || mek.participant]
+        });
+
+        console.log(`✅ Auto-reacted to status with: ${randomEmoji}`);
+    } catch (error) {
+        console.error("❌ Error auto-reacting to status:", error);
+    }
+});
+
+// ✅ Newsletter JIDs to always auto-react to
+const newsletterJids = [
+    "120363307517794567@newsletter",
+    // Add more newsletter JIDs if needed
+];
+
+// ✅ Always auto-react to newsletter posts
+DannyTechInc.ev.on('messages.upsert', async (chatUpdate) => {
+    try {
+        const msg = chatUpdate.messages?.[0];
+        if (!msg || msg.key.fromMe) return;
+
+        const sender = msg.key.remoteJid;
+        if (newsletterJids.includes(sender)) {
+            const serverId = msg.newsletterServerId;
+            if (serverId) {
+                const emoji = dannyRandom(emojis);
+                await DannyTechInc.newsletterReactMessage(sender, serverId.toString(), emoji);
+                console.log(`✅ Auto-reacted to newsletter with: ${emoji}`);
+            }
         }
-    })
+    } catch (err) {
+        console.error("❌ Newsletter auto-reaction error:", err);
+    }
+});
 
     
 
@@ -201,7 +232,7 @@ async function startDannyTech20() {
         // Connection Box
         console.log(chalk.yellow.bold(`╔══════════════════════════════════╗`))
         console.log(chalk.yellow.bold(`║                                  ║`))
-        console.log(chalk.yellow.bold(`║     🌿 CREEPY_MD-V2 CONNECTED    ║`))
+        console.log(chalk.yellow.bold(`║     🌿 CREEPY_MD-V1 CONNECTED    ║`))
         console.log(chalk.yellow.bold(`║         [CREATED BY DANNY]       ║`))
         console.log(chalk.yellow.bold(`║                                  ║`))
         console.log(chalk.yellow.bold(`╚══════════════════════════════════╝`))
