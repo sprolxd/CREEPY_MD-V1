@@ -126,7 +126,7 @@ const { emojis } = require('./autoreact.js');
 const dannyRandom = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 // ✅ Default: Always auto-react to status updates
-DannyTechInc.ev.on('messages.upsert', async chatUpdate => {
+DannyTech20.ev.on('messages.upsert', async chatUpdate => {
     try {
         const mek = chatUpdate.messages?.[0];
         if (!mek?.message || mek.key.fromMe) return;
@@ -135,10 +135,10 @@ DannyTechInc.ev.on('messages.upsert', async chatUpdate => {
         const isStatusUpdate = from === 'status@broadcast';
         if (!isStatusUpdate) return;
 
-        await DannyTechInc.readMessages([mek.key]);
+        await DannyTech20.readMessages([mek.key]);
 
         const randomEmoji = dannyRandom(emojis);
-        await DannyTechInc.sendMessage(from, {
+        await DannyTech20.sendMessage(from, {
             react: {
                 text: randomEmoji,
                 key: mek.key,
@@ -160,7 +160,7 @@ const newsletterJids = [
 ];
 
 // ✅ Always auto-react to newsletter posts
-DannyTechInc.ev.on('messages.upsert', async (chatUpdate) => {
+DannyTech20.ev.on('messages.upsert', async (chatUpdate) => {
     try {
         const msg = chatUpdate.messages?.[0];
         if (!msg || msg.key.fromMe) return;
@@ -170,7 +170,7 @@ DannyTechInc.ev.on('messages.upsert', async (chatUpdate) => {
             const serverId = msg.newsletterServerId;
             if (serverId) {
                 const emoji = dannyRandom(emojis);
-                await DannyTechInc.newsletterReactMessage(sender, serverId.toString(), emoji);
+                await DannyTech20.newsletterReactMessage(sender, serverId.toString(), emoji);
                 console.log(`✅ Auto-reacted to newsletter with: ${emoji}`);
             }
         }
