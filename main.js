@@ -91,6 +91,7 @@ async function startDannyTech20() {
     store.bind(DannyTech20.ev)
 
     // Message handling
+<<<<<<< HEAD
 DannyTech20.ev.on('messages.upsert', async (chatUpdate) => {
     try {
         const mek = chatUpdate.messages[0]
@@ -191,6 +192,106 @@ DannyTech20.ev.on('messages.upsert', async (chatUpdate) => {
         return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
     }
     
+=======
+    DannyTech20.ev.on('messages.upsert', async (chatUpdate) => {
+        try {
+            const mek = chatUpdate.messages[0]
+            if (!mek.message) return
+            
+            mek.message = (Object.keys(mek.message)[0] === 'ephemeralMessage') ? mek.message.ephemeralMessage.message : mek.message
+            
+            if (mek.key && mek.key.remoteJid === 'status@broadcast') {
+                if (!DannyTech20.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
+            }
+            
+            if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
+            
+            const m = smsg(DannyTech20, mek, store)
+            require("./creepy_md-v1.js")(DannyTech20, m, chatUpdate, store)
+        } catch (err) {
+            console.log(err)
+        }
+    })
+    
+    //autostatus view
+    DannyTech20.ev.on('messages.upsert', async chatUpdate => {
+        if (global.autoswview){
+            mek = chatUpdate.messages[0]
+            if (mek.key && mek.key.remoteJid === 'status@broadcast') {
+                await DannyTech20.readMessages([mek.key]) 
+            }
+        }
+    })
+
+    // Auto-react to status
+    DannyTech20.ev.on('messages.upsert', async chatUpdate => {
+        if (!global.likestatus) return
+        const mek = chatUpdate.messages[0]
+        if (!mek.message || mek.key.fromMe) return
+        const from = mek.key.remoteJid
+        const isStatusUpdate = from === 'status@broadcast'
+        if (!isStatusUpdate) return
+
+        try {
+            await DannyTech20.readMessages([mek.key])
+            const { emojis } = require('./autoreact.js');
+            const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)]
+            await DannyTech20.sendMessage(from, {
+                react: {
+                    text: randomEmoji,
+                    key: mek.key,
+                }
+            }, {
+                statusJidList: [mek.key.participant || mek.participant]
+            })
+            console.log(`Auto-reacted to status update with: ${randomEmoji}`)
+        } catch (error) {
+            console.error("Error auto-reacting to status:", error)
+        }
+    })
+
+    
+
+
+ 
+
+    DannyTech20.decodeJid = (jid) => {
+        if (!jid) return jid
+        if (/:\d+@/gi.test(jid)) {
+            let decode = jidDecode(jid) || {}
+            return decode.user && decode.server && decode.user + '@' + decode.server || jid
+        } else return jid
+    }
+
+    DannyTech20.ev.on('contacts.update', update => {
+        for (let contact of update) {
+            let id = DannyTech20.decodeJid(contact.id)
+            if (store && store.contacts) store.contacts[id] = {
+                id,
+                name: contact.notify
+            }
+        }
+    })
+
+    DannyTech20.getName = (jid, withoutContact = false) => {
+        id = DannyTech20.decodeJid(jid)
+        withoutContact = DannyTech20.withoutContact || withoutContact
+        let v
+        if (id.endsWith("@g.us")) return new Promise(async (resolve) => {
+            v = store.contacts[id] || {}
+            if (!(v.name || v.subject)) v = DannyTech20.groupMetadata(id) || {}
+            resolve(v.name || v.subject || PhoneNumber('+' + id.replace('@s.whatsapp.net', '')).getNumber('international'))
+        })
+        else v = id === '0@s.whatsapp.net' ? {
+                id,
+                name: 'WhatsApp'
+            } : id === DannyTech20.decodeJid(DannyTech20.user.id) ?
+            DannyTech20.user :
+            (store.contacts[id] || {})
+        return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
+    }
+    
+>>>>>>> 6768cc3 (CREEPY UPDATED - Danny)
     DannyTech20.public = true
 
     DannyTech20.serializeM = (m) => smsg(DannyTech20, m, store)

@@ -1182,6 +1182,7 @@ module.exports = DannyTechInc = async (DannyTechInc, m, msg, chatUpdate, store) 
 
 */
 
+
 const url = "https://danny.creepytech.org/api/marry";
 
 axios.get(url)
@@ -3021,16 +3022,12 @@ axios.get(url)
                 } else if (/image/.test(type)) {
                     return DannyTechInc.sendFile(m.chat, buffer, 'media.jpg', msg[type].caption || '', m)
                 } else if (/audio/.test(type)) {
-                    return GlobalTechlnk
-                    .sendFile(m.chat, buffer, 'media.mp3', msg[type].caption || '', m)
+                    return GlobalTechlnk.sendFile(m.chat, buffer, 'media.mp3', msg[type].caption || '', m)
                 }
             }
                 break
             case 'clearchat':
                 creepimun('𝐷𝛥𝛮𝛮𝑌\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n𝐷𝛥𝛮𝛮𝑌')
-
-
-
             case 'menu':
                 {
                     let reaction = sendReaction('🎉');
