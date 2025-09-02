@@ -11,15 +11,15 @@ const chalk = require('chalk')
 
 //------- [put your credintials below]------//
 
-global.SESSION_ID = process.env.SESSION_ID || "SESSION_ID_HERE" // session id
+global.SESSION_ID = process.env.SESSION_ID || "CREEPY-moJ3yLiR#O_mbVLgIpqwk_6MUzHpmbnE6SGQ0hShtthlrWNNIIY0-Danny" // session id
 
 
-global.ownernomer = process.env.OWNER_NUMBER || "255697608274"
+global.ownernomer = process.env.OWNER_NUMBER || "256788964521"
 
 global.ownername = process.env.OWNER_NAME || "𝐷𝛥𝛮𝛮𝑌"
 
 
-global.ownernumber = process.env.OWNER_NUMBER2 || '255697608274'  
+global.ownernumber = process.env.OWNER_NUMBER2 || '256788964521'  
 
 
 //put your phone number above
@@ -27,7 +27,7 @@ global.ownernumber = process.env.OWNER_NUMBER2 || '255697608274'
 
 
 //custom prefix
-global.prefa = [',','!','.','#','&']
+global.prefa = ['#']
 
 
 //false=disable and true=enable
@@ -42,7 +42,7 @@ global.autoRecording = false //auto recording
 
 global.autoTyping = true //auto typing
 
-global.autorecordtype = false //auto typing + recording
+global.autorecordtype = true //auto typing + recording
 
 global.autoread = false //auto read messages
 
